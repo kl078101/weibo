@@ -26,3 +26,7 @@ Route::post('login', 'SessionsController@store')->name('login'); //提交
 Route::delete('logout', 'SessionsController@destroy')->name('logout'); //退出
 
 Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
+
+//关注页和粉丝列表页
+Route::get('/users/{user}/followings', 'UsersController@followings')->name('users.followings');
+Route::get('/users/{user}/followers', 'UsersController@followers')->name('users.followers');
