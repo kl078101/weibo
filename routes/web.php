@@ -24,3 +24,5 @@ Route::resource('users', 'UsersController'); //定义用户资源
 Route::get('login', 'SessionsController@create')->name('login'); //登陆
 Route::post('login', 'SessionsController@store')->name('login'); //提交
 Route::delete('logout', 'SessionsController@destroy')->name('logout'); //退出
+
+Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);
