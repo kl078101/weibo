@@ -17,7 +17,9 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Model::unguard();
 
-        $this->call(UsersTableSeeder::class);
+        $this->call(UsersTableSeeder::class);//填充演示用户
+
+        $this->call(StatusesTableSeeder::class);//填充演示微博内容
 
         Model::reguard();
     }
